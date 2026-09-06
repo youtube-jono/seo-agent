@@ -24,10 +24,11 @@ Recommend one from the trade if it's obvious; the choice is mine. Record `SITE_S
 
 Then promote the pick to the root - **style names never appear in live URLs**:
 1. `app/[style]/page.tsx` → `app/page.tsx` (keep the picker as `app/_picker.tsx.bak`)
-2. `app/[style]/about|blog|contact` → `app/about` etc. The `/services` and `/blog` INDEX pages already ship at the top level - keep them, they are what `/service-page` and `/blog-post` add entries to
-3. Delete `app/bold/` and `app/calm/`
-4. Rewrite every `href="/bold/..."` / `"/calm/..."` → `"/..."`
-5. Verify: `grep -r "/bold\|/calm" app/` is empty, every nav link resolves
+2. `app/[style]/about/page.tsx` → `app/about/page.tsx` and `app/[style]/contact/page.tsx` → `app/contact/page.tsx` (they replace the minimal stubs). The `/services` and `/blog` INDEX pages already ship at the top level - keep them, they are what `/service-page` and `/blog-post` add entries to
+3. **Save the two template pages OUT of `app/` before deleting anything:** `app/[style]/services/example-service/page.tsx` → `templates/service-page.tsx` and `app/[style]/blog/example-post/page.tsx` → `templates/blog-post.tsx` (create `website/templates/`). `/service-page` and `/blog-post` copy their first page from there. Nothing under `templates/` is a route, so nothing placeholder ever goes live
+4. Delete `app/bold/` and `app/calm/`
+5. Rewrite every `href="/bold/..."` / `"/calm/..."` → `"/..."`
+6. Verify: `grep -r "/bold\|/calm" app/` is empty, `ls templates/` shows both files, every nav link resolves
 
 ## Step 2 Swap the words, in place
 

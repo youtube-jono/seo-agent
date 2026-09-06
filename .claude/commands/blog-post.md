@@ -22,9 +22,11 @@ State the pick in one line and build. The ONLY stop: a keyword I typed is alread
 ## ⛔ Duplicate = `cp` the file
 
 ```
-cp app/<SITE_STYLE>/blog/page.tsx app/blog/[slug]/page.tsx   # first ever
+cp templates/blog-post.tsx        app/blog/[slug]/page.tsx      # first ever (saved there by /build-website)
 cp app/blog/[existing]/page.tsx   app/blog/[new-slug]/page.tsx  # every one after
 ```
+
+No `templates/blog-post.tsx` yet? `/build-website` has not run - run it first, or copy `app/bold/blog/example-post/page.tsx` if the style folders still exist.
 
 Edit ONLY words, images, metadata, schema. Composing a fresh page from components is designing - banned.
 

@@ -27,9 +27,11 @@ Never ask. No argument = next unwritten `## N. Service page:` row in `keyword-ma
 ## ⛔ Duplicate = `cp` the file
 
 ```
-cp app/<SITE_STYLE>/services/page.tsx app/services/[slug]/page.tsx   # first ever
+cp templates/service-page.tsx        app/services/[slug]/page.tsx      # first ever (saved there by /build-website)
 cp app/services/[existing]/page.tsx  app/services/[new-slug]/page.tsx  # every one after
 ```
+
+No `templates/service-page.tsx` yet? `/build-website` has not run - run it first, or copy `app/bold/services/example-service/page.tsx` if the style folders still exist.
 
 City pages copy their parent service page. Then edit ONLY words, metadata, photos, schema. Layout, sections, inline styles stay byte-identical. Composing a page from components or writing new CSS is designing - banned.
 
