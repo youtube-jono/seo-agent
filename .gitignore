@@ -1,0 +1,17 @@
+.env
+.env.*
+node_modules/
+out/
+.next/
+.vercel/
+.DS_Store
+credentials.json
+token.json
+*.log
+gsc-key.json
+*.iam.json
+!.env.example
+
+# Python build artifacts
+__pycache__/
+*.pyc

@@ -1,0 +1,138 @@
+/* The shipped design system, from design/sites/trades.
+   Inlined in <head> by layout.tsx - through the Tailwind pipeline the custom
+   properties resolved to empty. Re-skin by swapping the --blue-* ramp. */
+
+/* ---- fonts.css ---- */
+/* Archivo — served from Google Fonts. No vendor font binaries were provided with this
+   brief, so the family is loaded from the Google CDN rather than self-hosted files.
+   If you have licensed webfont files, drop them in assets/fonts/ and replace this
+   @import with @font-face rules pointing at them. */
+
+:root{--font-core:"Archivo","Helvetica Neue",Arial,sans-serif;--font-mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
+
+/* ---- base.css ---- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font:var(--type-body);color:var(--text-body);background:var(--surface-page);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,h4,p,figure,blockquote{margin:0}
+h1{font:var(--type-h1);letter-spacing:var(--track-heading);color:var(--text-strong)}
+h2{font:var(--type-h2);letter-spacing:var(--track-heading);color:var(--text-strong)}
+h3{font:var(--type-h3);color:var(--text-strong)}
+p{text-wrap:pretty}
+a{color:var(--text-link);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;transition:var(--transition-control)}
+a:hover{color:var(--text-link-hover);text-decoration-thickness:2px}
+img{max-width:100%;display:block}
+button,input,select,textarea{font-family:inherit;font-size:inherit}
+:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+::selection{background:#ffe9a8;color:#1a1a19}
+.gw-container{max-width:var(--container-max);margin:0 auto;padding-inline:var(--gutter)}
+.gw-label{font:var(--type-label);letter-spacing:var(--track-label);text-transform:uppercase;color:var(--text-muted)}
+
+/* ---- colors.css ---- */
+:root{
+/* Base — blue (the brand: nav, hero, buttons, links, stats) */
+--blue-900:#062f66;--blue-800:#0a4794;--blue-700:#0b62c9;--blue-600:#0a7cff;--blue-500:#3d97ff;--blue-400:#6fb2ff;--blue-300:#9ccbff;--blue-200:#c6e1ff;--blue-100:#e2effe;--blue-50:#f2f8ff;
+/* Base — accent (the one accent: promo strip, the money action, active states).
+   Graphite by design: high contrast on white AND on any brand hue, so a business
+   can re-skin --blue-* without ever restyling the accent. Swap these nine values
+   to change the accent everywhere; nothing else references a hue name. */
+--accent-900:#0f1211;--accent-800:#1c201e;--accent-700:#2c312e;--accent-600:#3d4340;
+/* The accent has FOUR steps on purpose. It is a near-black used at full strength
+   for the promo strip, the money action and the footer — it never appears as a
+   pale tint, so pale steps would only ever be misused. Anything that needs a
+   light neutral uses --ink-*; anything that needs a light brand tint uses
+   --blue-50 / --blue-100. Earlier pale accent steps were removed: they were
+   blue-grey (#C2CBD6 etc), unused in both page styles, and they leaked blue
+   into icons sitting on the hero. */
+/* Base — neutral. TRUE greys, very slightly warm, with NO blue cast.
+   This matters more than it looks: a page carries twenty-plus photo slots,
+   borders and icon tiles drawn from this ramp but only two brand-blue bands,
+   so a blue-tinted neutral makes the whole page read blue no matter how white
+   the sections are. Keep the R/G/B channels within ~4 of each other. */
+--ink-900:#1a1a19;--ink-800:#272725;--ink-700:#3f3f3c;--ink-600:#575754;--ink-500:#73726e;--ink-400:#9a9995;--ink-300:#c5c4bf;--ink-200:#e3e2de;--ink-100:#f0efec;--ink-50:#f9f8f6;--white:#ffffff;
+/* Base — semantic hues */
+--positive-600:#0a7a52;--positive-500:#0d9668;--positive-50:#e6f6f0;
+--caution-600:#a35a06;--caution-500:#c26f09;--caution-50:#fdf3e6;
+--critical-600:#b52d24;--critical-500:#d93a2f;--critical-50:#fdedec;
+--info-600:#0b62c9;--info-500:#0a7cff;--info-50:#e8f2ff;
+
+/* Semantic — text */
+--text-strong:var(--ink-900);--text-body:var(--ink-700);--text-muted:var(--ink-500);--text-faint:var(--ink-400);--text-inverse:var(--white);--text-brand:var(--blue-700);--text-accent:var(--accent-600);--text-link:var(--blue-700);--text-link-hover:var(--blue-600);
+/* Semantic — surfaces */
+--surface-page:var(--white);--surface-card:var(--white);--surface-sunken:var(--ink-100);--surface-tint:var(--blue-50);--surface-brand:var(--blue-600);--surface-brand-deep:var(--blue-700);--surface-brand-soft:var(--blue-100);--surface-accent:var(--accent-800);--surface-accent-soft:var(--ink-100);--surface-inverse:var(--ink-900);--surface-overlay:rgba(26,26,25,.5);
+/* Semantic — lines */
+--line-hairline:var(--ink-200);--line-strong:var(--ink-300);--line-brand:var(--blue-600);--line-focus:var(--blue-600);
+/* Semantic — text that sits on --surface-accent */
+--text-on-accent:var(--white);
+/* Semantic — rating stars (own token: the accent is too light to read on white) */
+--star-filled:var(--blue-600);--star-empty:var(--ink-300);--star-on-brand:var(--white);
+/* Semantic — status */
+--status-positive:var(--positive-500);--status-positive-bg:var(--positive-50);--status-caution:var(--caution-500);--status-caution-bg:var(--caution-50);--status-critical:var(--critical-500);--status-critical-bg:var(--critical-50);--status-info:var(--info-500);--status-info-bg:var(--info-50);
+}
+[data-theme="dark"]{--text-strong:var(--white);--text-body:var(--blue-100);--text-muted:var(--blue-200);--text-faint:var(--blue-300);--text-brand:var(--blue-200);--text-link:var(--blue-300);--surface-page:var(--blue-900);--surface-card:var(--blue-800);--surface-sunken:#052654;--surface-tint:var(--blue-800);--surface-brand-soft:var(--blue-800);--line-hairline:rgba(255,255,255,.16);--line-strong:rgba(255,255,255,.28)}
+
+/* ---- typography.css ---- */
+:root{
+--weight-regular:400;/* @kind other */--weight-medium:500;/* @kind other */--weight-semibold:600;/* @kind other */--weight-bold:700;/* @kind other */--weight-black:900;/* @kind other */
+/* Sizes — display is tight and set in caps-free sentence case */
+--size-display-xl:64px;--size-display:48px;--size-h1:38px;--size-h2:29px;--size-h3:22px;--size-h4:18px;
+--size-body-lg:18px;--size-body:16px;--size-body-sm:14px;--size-caption:12.5px;--size-label:12px;
+--lh-display:1.02;/* @kind other */--lh-heading:1.14;/* @kind other */--lh-snug:1.35;/* @kind other */--lh-body:1.6;/* @kind other */--lh-loose:1.75;/* @kind other */
+--track-display:-0.032em;/* @kind other */--track-heading:-0.024em;/* @kind other */--track-body:0em;/* @kind other */--track-label:0.11em;/* @kind other */
+/* Semantic roles */
+--type-display:var(--weight-black) var(--size-display)/var(--lh-display) var(--font-core);
+--type-h1:var(--weight-black) var(--size-h1)/var(--lh-heading) var(--font-core);
+--type-h2:var(--weight-black) var(--size-h2)/var(--lh-heading) var(--font-core);
+--type-h3:var(--weight-bold) var(--size-h3)/var(--lh-snug) var(--font-core);
+--type-h4:var(--weight-bold) var(--size-h4)/var(--lh-snug) var(--font-core);
+--type-body:var(--weight-regular) var(--size-body)/var(--lh-body) var(--font-core);
+--type-body-lg:var(--weight-regular) var(--size-body-lg)/var(--lh-body) var(--font-core);
+--type-body-sm:var(--weight-regular) var(--size-body-sm)/var(--lh-body) var(--font-core);
+--type-caption:var(--weight-regular) var(--size-caption)/var(--lh-snug) var(--font-core);
+--type-button:var(--weight-bold) var(--size-body-sm)/1 var(--font-core);
+--type-label:var(--weight-bold) var(--size-label)/1.2 var(--font-core);
+--type-phone:var(--weight-black) var(--size-h3)/1.1 var(--font-core);
+}
+
+/* ---- spacing.css ---- */
+:root{
+--space-0:0px;--space-1:2px;--space-2:4px;--space-3:8px;--space-4:12px;--space-5:16px;--space-6:20px;--space-7:24px;--space-8:32px;--space-9:40px;--space-10:56px;--space-11:72px;--space-12:96px;--space-13:128px;
+/* Semantic */
+--gap-inline:var(--space-3);--gap-stack:var(--space-5);--gap-group:var(--space-8);
+--pad-control:10px 16px;--pad-control-sm:7px 12px;--pad-control-lg:14px 22px;
+--pad-card:var(--space-7);--pad-card-lg:var(--space-8);
+--section-y:var(--space-12);--section-y-sm:var(--space-10);
+--container-max:1440px;--container-text:66ch;--gutter:var(--space-6);
+--control-h:42px;--control-h-sm:34px;--control-h-lg:52px;
+}
+
+/* ---- radius.css ---- */
+:root{--radius-0:0px;--radius-xs:4px;--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:20px;--radius-pill:999px;
+/* Chunkier than a typical web app: buttons are pills, cards are 16px. */
+--radius-control:var(--radius-pill);--radius-input:var(--radius-sm);--radius-card:var(--radius-lg);--radius-media:var(--radius-xl);--radius-badge:var(--radius-pill);--radius-sheet:var(--radius-lg);
+--border-hairline:1px;--border-strong:1.5px;--border-focus:2px}
+
+/* ---- elevation.css ---- */
+:root{
+/* Shadows are soft, cool-tinted and low-opacity — bright and airy, never heavy. */
+--shadow-none:none;
+--shadow-xs:0 1px 2px rgba(16,24,40,.05);
+--shadow-sm:0 1px 3px rgba(16,24,40,.07),0 1px 2px rgba(16,24,40,.04);
+--shadow-md:0 2px 10px rgba(16,24,40,.08),0 1px 3px rgba(16,24,40,.05);
+--shadow-lg:0 12px 32px rgba(16,24,40,.12),0 3px 8px rgba(16,24,40,.06);
+--shadow-brand:0 6px 18px rgba(27,93,209,.18);
+--shadow-inset-press:inset 0 2px 0 rgba(16,24,40,.10);
+--ring-focus:0 0 0 var(--border-focus) var(--blue-600),0 0 0 4px var(--blue-200);
+--scrim-media:linear-gradient(to top,rgba(26,26,25,.76) 0%,rgba(26,26,25,.28) 45%,rgba(26,26,25,0) 100%);/* @kind other */
+--overlay-blur:saturate(1.05) blur(8px);/* @kind other */
+}
+
+/* ---- motion.css ---- */
+:root{--dur-instant:90ms;/* @kind other */--dur-fast:140ms;/* @kind other */--dur-base:200ms;/* @kind other */--dur-slow:320ms;/* @kind other */
+--ease-standard:cubic-bezier(.2,.6,.2,1);/* @kind other */--ease-out:cubic-bezier(0,.6,.3,1);/* @kind other */--ease-in:cubic-bezier(.5,0,1,.5);/* @kind other */
+--transition-control:background-color var(--dur-fast) var(--ease-standard),border-color var(--dur-fast) var(--ease-standard),color var(--dur-fast) var(--ease-standard),box-shadow var(--dur-fast) var(--ease-standard);/* @kind other */
+--transition-surface:box-shadow var(--dur-base) var(--ease-standard),transform var(--dur-base) var(--ease-standard);/* @kind other */
+--press-translate:1px}
+
+/* ---- design system stylesheet ---- */
+

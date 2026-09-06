@@ -1,0 +1,25 @@
+# Replace every line below with the real business.
+# This file tells ChatGPT, Claude and Perplexity what you do, in plain text.
+
+# Your Business Name
+
+> One plain sentence on what you do and who you do it for.
+
+## Services
+- Service one: one line on what it is and who it's for
+- Service two: one line
+- Service three: one line
+
+## Areas served
+Your city and the surrounding areas you actually travel to.
+
+## Facts
+- Years in business:
+- Licence number:
+- Reviews: X.X stars from N reviews
+- Response time:
+
+## Contact
+Phone:
+Email:
+Quote: https://example.com/quote
