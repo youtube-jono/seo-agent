@@ -24,7 +24,7 @@ Most commands don't get to 100 on the first run. Run them again - every pass imp
 ## Requirements
 
 - [Claude Code](https://claude.com/claude-code) installed (the VS Code extension is the easiest way in)
-- Semrush - powers the keyword data and the audit crawl. [Start with the 14-day free trial](https://semrush.sjv.io/c/3446994/3367878/13053), then connect it in Claude Code: Settings → Connectors → search Semrush
+- Semrush - powers the keyword data and the audit crawl. [Start with the 14-day free trial](https://semrush.sjv.io/c/7401436/3945708/13053), then connect it in Claude Code: Settings → Connectors → search Semrush
 - A GitHub account and a Vercel account for `/publish` (both free - the command walks you through creating them)
 - WordPress users: the Novamira plugin + connection (lets Claude edit your site directly) - the first WordPress command you run walks you through it
 
