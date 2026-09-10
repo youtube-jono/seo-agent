@@ -413,6 +413,7 @@ I might only want the errors. I might want to see the meta rewrites before they 
 **4. Fix what I approved.** Only what I said yes to, in the order agreed. Work the full list, biggest category first, through my site's lane:
 - Static/Next.js: edit the code, redeploy
 - WordPress: apply fixes through Novamira per `references/wordpress-audit.md` - the #1 rule from that file: verify every fix at the RENDERED front-end HTML (the head may come from the theme, a builder, or a plugin - fix where it actually renders, and keep the stack profile updated)
+  - **Novamira not connected yet? That is step zero, not a reason to hand me a manual list.** Novamira is the WordPress plugin + MCP connection that lets Claude edit the site directly (pages, posts, meta, settings, plugins). Walk me through installing the plugin on my site and connecting it right now, then continue the fix loop through it. Elementor, Gutenberg and custom-theme pages are all editable through it - no migration needed. Only after it is connected does anything on this lane count as fixed.
 - **THE COPY RULE and THE DELETION RULE hold throughout** (see the top of this file): fix the mechanical issue, never touch the writing, never remove anything. Body sentences altered should be zero; things deleted should be zero
 - Anything genuinely unfixable from here (server config only the host controls, a flag on an external domain) goes on a short WAIVED list with a one-line reason each - waived means consciously skipped, not forgotten
 
